@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barbearia </title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="./assets/logo-ra-baberaria1.png" alt="logo" class="logo-img">
+                Barbearia
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
+                <li><a href="#contact">Agendamento</a></li>
+            </ul>
+            <div class="menu-toggle"><i class='bx bx-menu'></i></div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>De segunda a quarta você ganha R$ 5,00 de desconto em qualquer corte!</h1>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <h2 class="section-title">Agende Seu Horário Agora</h2>
+        <p class="cta-subtitle">Clique no botão abaixo e escolha seu horário</p>
+
+        <div class="haircuts" id="profissionaisContainer">
+            <!-- Profissionais carregados do Firebase -->
+            <div class="haircut" style="max-width:520px;">
+                <div class="haircut-info">
+                    <strong>Carregando profissionais...</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="cta-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class='bx bx-time'></i>
+                        <span><span id="horarioFuncionamentoTexto">Seg-Sáb: 9h às 19h</span></span>
+
+                    </div>
+                    <div class="info-item">
+                        <i class='bx bx-phone'></i>
+                        <span>(81) 98370-4290</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="services-content container">
+            <h2>Serviços</h2>
+            <p>Na Barbearia RA Torre2, oferecemos serviços completos para cuidar do seu estilo com qualidade e
+                profissionalismo:</p>
+        </div>
+
+        <section class="haircuts">
+            <div class="haircut" data-aos="fade-up" data-aos-delay="250">
+                <img src="./assets/corte2.png" alt="Corte de Barba" class="service-img">
+                <div class="haircut-info">
+                    <strong>Barba</strong>
+                    <a href="#">R$ 30,00</a>
+                </div>
+            </div>
+
+            <div class="haircut" data-aos="fade-up" data-aos-delay="400">
+                <img src="./assets/corte4.png" alt="Sobrancelha" class="service-img">
+                <div class="haircut-info">
+                    <strong>Corte + Botox Prime</strong>
+                    <a href="#">R$ 80,00</a>
+                </div>
+            </div>
+
+            <div class="haircut" data-aos="fade-up" data-aos-delay="400">
+                <img src="./assets/corte5.png" alt="Sobrancelha" class="service-img">
+                <div class="haircut-info">
+                    <strong>Sobrancelha</strong>
+                    <a href="#">R$ 15,00</a>
+                </div>
+            </div>
+
+            <div class="haircut" data-aos="fade-up" data-aos-delay="400">
+                <img src="./assets/corte6.png" alt="Luzes" class="service-img">
+                <div class="haircut-info">
+                    <strong>Luzes</strong>
+                    <a href="#">R$ 80,00</a>
+                </div>
+            </div>
+
+            <div class="haircut" data-aos="fade-up" data-aos-delay="400">
+                <img src="./assets/corte-infantil.png" alt="Corte infantil" class="service-img">
+                <div class="haircut-info">
+                    <strong>Corte infantil</strong>
+                    <a href="#">R$ 50,00</a>
+                </div>
+            </div>
+
+            <div class="haircut" data-aos="fade-up" data-aos-delay="400">
+                <img src="./assets/corte-tesoura.png" alt="Corte Tesoura" class="service-img">
+                <div class="haircut-info">
+                    <strong>Tesoura</strong>
+                    <a href="#">R$ 40,00</a>
+                </div>
+            </div>
+
+            <div class="haircut" data-aos="fade-up" data-aos-delay="400">
+                <img src="./assets/corte3.png" alt="Maquina e Tesoura" class="service-img">
+                <div class="haircut-info">
+                    <strong>Maquina e Tesoura</strong>
+                    <a href="#">R$ 30,00</a>
+                </div>
+            </div>
+
+            <div class="haircut" data-aos="fade-up" data-aos-delay="400">
+                <img src="./assets/corte-maquina.png" alt="Corte Maquina" class="service-img">
+                <div class="haircut-info">
+                    <strong>Maquina</strong>
+                    <a href="#">R$ 30,00</a>
+                </div>
+            </div>
+
+            <div class="haircut" data-aos="fade-up" data-aos-delay="400">
+                <img src="./assets/logo-autismo1.jpeg" alt="Corte Sensorial" class="service-img">
+                <div class="haircut-info">
+                    <strong>Corte Sensorial</strong>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">O Que Nossas Clientes Dizem</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Simplesmente incrível! A equipe é super atenciosa e o resultado do meu
+                        cabelo ficou perfeito. Recomendo de olhos fechados!"</p>
+                    <p class="testimonial-author">- Alex</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Ambiente acolhedor e profissionais extremamente capacitados. Sempre
+                        saio de lá me sentindo renovada e linda!"</p>
+                    <p class="testimonial-author">- Henrique</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"O melhor salão da região! Preços justos e qualidade excepcional. Sou
+                        cliente fiel há mais de 3 anos."</p>
+                    <p class="testimonial-author">- Maciel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <div class="iframe">
+        <h2 class="iframe-title">Venha nos conhecer</h2>
+    </div>
+
+    <iframe width="100%"
+        src="https://www.google.com/maps/embed?pb=!4v1765554865372!6m8!1m7!1sPrvlBZk0EB0YzEM9YBkk8w!2m2!1d-8.043099519244041!2d-34.91216888905029!3f152.32419629084492!4f-8.948011730656944!5f0.7820865974627469"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/barbeariaratorre2/" target="_blank"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="https://wa.me/5581983704290" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+        </div>
+        <p>&copy; 2025 Barbearia RA Torre2. Todos os direitos reservados.</p>
+        <p>📍 Rua Lagoa do Rancho, 163 - Torre | ☎️ (81) 98370-4290</p>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5581983704290" class="whatsapp-float" target="_blank">
+        <i class='bx bxl-whatsapp'></i>
+    </a>
+
+    <!-- ===== MODAIS ===== -->
+
+    <!-- 1) Modal de Agendamento -->
+    <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <span class="close" onclick="fecharModal('modal')">&times;</span>
+            <h2>Escolha seu horário</h2>
+
+            <label for="data">Data:</label>
+            <input type="date" id="data" required />
+
+            <label for="hora">Hora:</label>
+            <select id="hora">
+                <option value="">Selecione um horário</option>
+            </select>
+
+            <label for="servicoDisplay">Serviço:</label>
+            <input id="servicoDisplay" type="text" placeholder="Selecionar..." readonly />
+
+            <button id="confirmarBtn">Agendar</button>
+        </div>
+    </div>
+
+    <!-- 2) Modal do Cliente -->
+    <div id="modalCliente" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <span class="close" onclick="fecharModal('modalCliente')">&times;</span>
+            <h2>Seus dados</h2>
+
+            <label for="nomeCliente">Nome</label>
+            <input type="text" id="nomeCliente" placeholder="Ex.: João" required />
+
+            <label for="sobrenomeCliente">Sobrenome</label>
+            <input type="text" id="sobrenomeCliente" placeholder="Ex.: Silva" required />
+
+            <label for="telefoneCliente">Telefone (com DDD)</label>
+            <input type="tel" id="telefoneCliente" placeholder="(81) 99999-9999" inputmode="tel"
+                autocomplete="tel-national" required />
+
+            <button type="button" id="btnClienteContinuar">Continuar</button>
+        </div>
+    </div>
+
+    <!-- 3) Modal de Produtos -->
+    <div id="modalProdutos" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <span class="close" onclick="fecharModal('modalProdutos')">&times;</span>
+            <h2>Adicionar produtos?</h2>
+            <p class="muted">Escolha seus produtos (opcional). O valor será informado no WhatsApp.</p>
+
+            <div id="produtosContainer" class="prod-grid"></div>
+
+            <div class="prod-total">
+                <span>Total: <strong id="prodTotal">R$ 0,00</strong></span>
+            </div>
+
+            <div class="row-actions">
+                <button type="button" id="btnProdutosPular" class="btn-secondary">Pular</button>
+                <button type="button" id="btnProdutosContinuar">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4) Modal RA Club -->
+    <div id="modalRAClub" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <div class="raclub-head">
+                <h2>RA Club • Assinatura</h2>
+                <p class="muted">Economize no seu corte com benefícios exclusivos:</p>
+                <ul class="raclub-list">
+                    <li>✂️ Cortes ilimitados</li>
+                    <li>🧴 10% OFF em produtos selecionados</li>
+                    <li>🗓️ Prioridade no agendamento</li>
+                </ul>
+            </div>
+
+            <div class="row-actions">
+                <button type="button" id="btnRAJaMembro" class="btn-secondary">Já faço parte</button>
+                <button type="button" id="btnRANao" class="btn-secondary">Agora não</button>
+                <a id="btnRAAssinar" class="btn-primary"
+                    href="https://app.galaxpay.com.br/landingpage8230852/barbeariara" target="_blank" rel="noopener">
+                    Quero assinar
+                </a>
+            </div>
+
+            <div id="raForm" class="hidden" aria-hidden="true"></div>
+        </div>
+    </div>
+
+   
+
+    <!-- ===== Modal de Serviço ===== -->
+    <div id="servicoModal" class="modal" aria-hidden="true">
+        <div class="modal-content svc-sheet" role="dialog" aria-modal="true">
+            <div class="svc-header">
+                <div class="svc-title">Selecionar serviço</div>
+                <span class="svc-close" onclick="fecharModal('servicoModal')">&times;</span>
+            </div>
+
+            <div class="svc-search">
+                <i class='bx bx-search' aria-hidden="true"></i>
+                <input id="svcSearch" type="search" placeholder="Digite para procurar um serviço..." autocomplete="off"
+                    spellcheck="false" />
+            </div>
+
+            <div class="svc-list" id="servicoLista"></div>
+
+            <div class="svc-actions">
+                <button id="servicoCancelar" class="svc-btn svc-btn-ghost">Cancelar</button>
+                <button id="servicoConfirmarWpp" class="svc-btn svc-btn-dark">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Modal de Confirmação ===== -->
+    <div id="modalConfirmacao" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <span class="close" onclick="fecharModal('modalConfirmacao')">&times;</span>
+            <h2>Agendamento Confirmado 🎉</h2>
+            <div id="confResumo" class="conf-resumo"></div>
+            <button type="button" id="btnOkConfirmacao">OK</button>
+        </div>
+    </div>
+
+    <!-- ===== Modal de Reagendamento ===== -->
+    <div id="modalReagendar" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <span class="close" onclick="fecharModal('modalReagendar')">&times;</span>
+            <h2>Reagendar seu horário</h2>
+
+            <!-- Etapa 1: Busca -->
+            <div id="reaStepBusca">
+                <label for="reaNome">Nome</label>
+                <input type="text" id="reaNome" placeholder="Ex.: João" />
+
+                <label for="reaSobrenome">Sobrenome</label>
+                <input type="text" id="reaSobrenome" placeholder="Ex.: Silva" />
+
+                <button type="button" id="reaBuscarBtn">Buscar agendamentos</button>
+
+                <div id="reaResultados" class="rea-lista"></div>
+            </div>
+
+            <!-- Etapa 2: Selecionado → escolher nova data/hora -->
+            <div id="reaStepMover" class="hidden">
+                <div id="reaEscolhido" class="muted"></div>
+
+                <label for="reaData">Nova data</label>
+                <input type="date" id="reaData" />
+
+                <label for="reaHora">Nova hora</label>
+                <select id="reaHora"></select>
+
+                <button type="button" id="reaConfirmarBtn">Confirmar reagendamento</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
