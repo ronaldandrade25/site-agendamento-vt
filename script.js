@@ -49,15 +49,6 @@ const horaSelect = document.getElementById('hora');
 // ===== Constantes =====
 const REVIEW_URL = document.getElementById('btnAvaliarGoogle')?.getAttribute('href') || '';
 
-const PRODUTOS = [
-  { nome: "Pomada Líquida DA Force MEN", preco: 39.99 },
-  { nome: "Leave-in", preco: 39.99 },
-  { nome: "Tônico Capilar Dom Pelo", preco: 49.99 },
-  { nome: "Balm Para Barba", preco: 39.99 },
-  { nome: "Pomada Modeladora - Efeito Teia", preco: 34.99 },
-  { nome: "Pomada Modeladora - Efeito Seco ", preco: 34.99 },
-];
-
 const SERVICOS = [
   // vazio (carrega do Firestore)
 ];
@@ -186,7 +177,7 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') tentarRetomarPosCheckout();
 });
 
-// ===== Fluxo Nome → Produtos → RA Club → Agendamento =====
+// ===== Fluxo Nome → RA Club → Agendamento =====
 const nomeClienteInput = document.getElementById('nomeCliente');
 const sobrenomeClienteInput = document.getElementById('sobrenomeCliente');
 const telefoneClienteInput = document.getElementById('telefoneCliente');
@@ -211,53 +202,13 @@ document.getElementById('btnClienteContinuar')?.addEventListener('click', () => 
   agendamentoContexto.sobrenomeCliente = sobrenome;
   agendamentoContexto.telefoneCliente = telDigits.startsWith('55') ? telDigits : ('55' + telDigits);
 
-  fecharModal('modalCliente');
-  abrirModalProdutos();
-});
-
-// Produtos
-const produtosContainer = document.getElementById('produtosContainer');
-const prodTotalSpan = document.getElementById('prodTotal');
-const btnProdutosPular = document.getElementById('btnProdutosPular');
-const btnProdutosContinuar = document.getElementById('btnProdutosContinuar');
-
-function renderProdutos() {
-  produtosContainer.innerHTML = '';
-  PRODUTOS.forEach((p, i) => {
-    const card = document.createElement('div');
-    card.className = 'prod-card';
-    card.dataset.index = i;
-    card.innerHTML = `
-      <div class="p-name">${p.nome}</div>
-      <div class="p-price">${toBRL(p.preco)}</div>
-      <small class="muted">Toque para selecionar</small>
-    `;
-    card.addEventListener('click', () => toggleProduto(i, card));
-    produtosContainer.appendChild(card);
-  });
-}
-function toggleProduto(index, cardEl) {
-  const item = PRODUTOS[index];
-  const exists = agendamentoContexto.produtos.find(pr => pr.nome === item.nome);
-  if (exists) {
-    agendamentoContexto.produtos = agendamentoContexto.produtos.filter(pr => pr.nome !== item.nome);
-    cardEl.classList.remove('active');
-  } else {
-    agendamentoContexto.produtos.push({ nome: item.nome, preco: item.preco });
-    cardEl.classList.add('active');
-  }
-  agendamentoContexto.totalProdutos = agendamentoContexto.produtos.reduce((s, it) => s + (it.preco || 0), 0);
-  prodTotalSpan.textContent = toBRL(agendamentoContexto.totalProdutos);
-}
-function abrirModalProdutos() {
+  // ✅ AJUSTE: removido modal de produtos
   agendamentoContexto.produtos = [];
   agendamentoContexto.totalProdutos = 0;
-  prodTotalSpan.textContent = toBRL(0);
-  renderProdutos();
-  abrirModal('modalProdutos');
-}
-btnProdutosPular?.addEventListener('click', () => { fecharModal('modalProdutos'); abrirModalRAClub(); });
-btnProdutosContinuar?.addEventListener('click', () => { fecharModal('modalProdutos'); abrirModalRAClub(); });
+
+  fecharModal('modalCliente');
+  abrirModalRAClub();
+});
 
 // RA Club
 const btnRAJaMembro = document.getElementById('btnRAJaMembro');
@@ -976,12 +927,6 @@ confirmarBtn?.addEventListener('click', async () => {
       ? `${agendamentoContexto.servico.nome} (${toBRL(agendamentoContexto.servico.valor)})`
       : '—';
 
-    let produtosTxt = "Sem produtos adicionais";
-    if (agendamentoContexto.produtos.length) {
-      const list = agendamentoContexto.produtos.map(p => `${p.nome} (${toBRL(p.preco)})`).join(', ');
-      produtosTxt = `${list} • Total: ${toBRL(agendamentoContexto.totalProdutos)}`;
-    }
-
     let raclubTxt = "Não";
     if (agendamentoContexto.raclub.status === 'membro') raclubTxt = "Membro";
     else if (agendamentoContexto.raclub.status === 'assinar' || agendamentoContexto.raclub.status === 'assinar_link') raclubTxt = "Deseja assinar";
@@ -994,7 +939,6 @@ confirmarBtn?.addEventListener('click', async () => {
         <div class="line"><span class="label">Data:</span><span>${dataBR}</span></div>
         <div class="line"><span class="label">Hora:</span><span>${hhmm}</span></div>
         <div class="line"><span class="label">Serviço:</span><span>${servicoTxt}</span></div>
-        <div class="line"><span class="label">Produtos:</span><span>${produtosTxt}</span></div>
         <div class="line"><span class="label">RA Club:</span><span>${raclubTxt}</span></div>
       `;
     }

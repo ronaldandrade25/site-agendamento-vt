@@ -40,7 +40,7 @@
         </div>
     </section>
 
- 
+
 
     <!-- Services -->
     <section class="services" id="services">
@@ -75,13 +75,13 @@
                 </div>
             </div>
 
-    
+
 
         </section>
     </section>
 
 
-       <!-- CTA -->
+    <!-- CTA -->
     <section class="cta-section" id="contact">
         <h2 class="section-title">Agende Seu Horário Agora</h2>
         <p class="cta-subtitle">Clique no botão abaixo e escolha seu horário</p>
@@ -144,9 +144,12 @@
         <h2 class="iframe-title">Venha nos conhecer</h2>
     </div>
 
-<iframe  width="100%"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.5545758855133!2d-34.91911782499232!3d-8.044771791982418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab19101d637c1b%3A0xd897be551065e4ca!2sR.%20Cantora%20Clara%20Nunes%2C%20Recife%20-%20PE%2C%2050711-550!5e0!3m2!1spt-BR!2sbr!4v1773982877588!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe width="100%"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.5545758855133!2d-34.91911782499232!3d-8.044771791982418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab19101d637c1b%3A0xd897be551065e4ca!2sR.%20Cantora%20Clara%20Nunes%2C%20Recife%20-%20PE%2C%2050711-550!5e0!3m2!1spt-BR!2sbr!4v1773982877588!5m2!1spt-BR!2sbr"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-   
+
 
     <!-- Footer -->
     <footer>
@@ -175,13 +178,13 @@
             <label for="data">Data:</label>
             <input type="date" id="data" required />
 
+            <label for="servicoDisplay">Serviço:</label>
+            <input id="servicoDisplay" type="text" placeholder="Selecionar..." readonly />
+
             <label for="hora">Hora:</label>
             <select id="hora">
                 <option value="">Selecione um horário</option>
             </select>
-
-            <label for="servicoDisplay">Serviço:</label>
-            <input id="servicoDisplay" type="text" placeholder="Selecionar..." readonly />
 
             <button id="confirmarBtn">Agendar</button>
         </div>
@@ -207,27 +210,7 @@
         </div>
     </div>
 
-    <!-- 3) Modal de Produtos -->
-    <div id="modalProdutos" class="modal" aria-hidden="true">
-        <div class="modal-content" role="dialog" aria-modal="true">
-            <span class="close" onclick="fecharModal('modalProdutos')">&times;</span>
-            <h2>Adicionar produtos?</h2>
-            <p class="muted">Escolha seus produtos (opcional). O valor será informado no WhatsApp.</p>
-
-            <div id="produtosContainer" class="prod-grid"></div>
-
-            <div class="prod-total">
-                <span>Total: <strong id="prodTotal">R$ 0,00</strong></span>
-            </div>
-
-            <div class="row-actions">
-                <button type="button" id="btnProdutosPular" class="btn-secondary">Pular</button>
-                <button type="button" id="btnProdutosContinuar">Continuar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 4) Modal RA Club -->
+    <!-- 3) Modal RA Club -->
     <div id="modalRAClub" class="modal" aria-hidden="true">
         <div class="modal-content" role="dialog" aria-modal="true">
             <div class="raclub-head">
@@ -253,7 +236,7 @@
         </div>
     </div>
 
-   
+
 
     <!-- ===== Modal de Serviço ===== -->
     <div id="servicoModal" class="modal" aria-hidden="true">
