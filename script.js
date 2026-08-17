@@ -508,13 +508,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDgaoVZK-5TF5xDFulLISridU9IXbmEYgg",
-  authDomain: "barbearia-agenda-fe2a7.firebaseapp.com",
-  projectId: "barbearia-agenda-fe2a7",
-  storageBucket: "barbearia-agenda-fe2a7.firebasestorage.app",
-  messagingSenderId: "876658896099",
-  appId: "1:876658896099:web:6a361416ed84fd636f29d6",
-  measurementId: "G-NJ4ETW1TNZ"
+  apiKey: "", // COLOQUE_SUA_API_KEY_AQUI
+  authDomain: "", // COLOQUE_SEU_AUTH_DOMAIN_AQUI
+  projectId: "", // COLOQUE_SEU_PROJECT_ID_AQUI
+  storageBucket: "", // COLOQUE_SEU_STORAGE_BUCKET_AQUI
+  messagingSenderId: "", // COLOQUE_SEU_MESSAGING_SENDER_ID_AQUI
+  appId: "", // COLOQUE_SEU_APP_ID_AQUI
+  measurementId: "" // COLOQUE_SEU_MEASUREMENT_ID_AQUI
 };
 const app = initializeApp(firebaseConfig);
 const db = initializeFirestore(app, { experimentalAutoDetectLongPolling: true });
